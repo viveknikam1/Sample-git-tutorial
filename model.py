@@ -18,7 +18,11 @@ from sklearn.preprocessing import StandardScaler
 Std_scaler = StandardScaler()
 X_train = Std_scaler.fit_transform(X_train)
 X_test = Std_scaler.transform(X_test)
-from sklearn.linear_model import LogisticRegression
-model_LR = LogisticRegression()
-model_LR.fit(X_train,y_train)
-model_LR.score(X_test,y_test)
+#from sklearn.linear_model import LogisticRegression
+#model_LR = LogisticRegression()
+#model_LR.fit(X_train,y_train)
+#model_LR.score(X_test,y_test)
+from sklearn.tree import DecisionTreeClassifier
+model_DT = DecisionTreeClassifier()
+model_DT.fit(X_train,y_train)
+model_DT.score(X_test,y_test)
