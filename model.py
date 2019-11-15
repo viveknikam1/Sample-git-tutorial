@@ -14,6 +14,10 @@ X = df.drop('quality',axis=1)
 y = df['quality']
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.25)
+from sklearn.preprocessing import StandardScaler
+Std_scaler = StandardScaler()
+X_train = Std_scaler.fit_transform(X_train)
+X_test = Std_scaler.transform(X_test)
 from sklearn.linear_model import LogisticRegression
 model_LR = LogisticRegression()
 model_LR.fit(X_train,y_train)
